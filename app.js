@@ -1,5 +1,6 @@
 // Express API to set up web server
 const express = require("express");
+const path = require('path');
 const app = express();
 const port = 3000;
 
@@ -32,7 +33,7 @@ app.listen(port, () => {
 
 // Serves a route to the browser
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Serves a route to the browser, with a dynamic url parameter
